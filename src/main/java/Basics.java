@@ -7,6 +7,8 @@
  * relevant readings for each task.
  */
 
+import org.w3c.dom.ls.LSOutput;
+
 /**
  *  1. In Java, no code can exist outside of a class. Unlike Python which uses
  *    functions, all code in Java uses methods.
@@ -43,6 +45,7 @@ public class Basics {
         /* TODO (Task 1): Write a line of code below that prints the string
          *                Hello World!
          */
+        System.out.println("Hello World!");
 
 
 
@@ -62,6 +65,7 @@ public class Basics {
          * TODO (Task 2): Create a variable named my_variable and assign it the
          *                value 100.
          */
+        int my_variable = 100;
 
 
 
@@ -99,6 +103,9 @@ public class Basics {
          * Current count: 1
          * Current count: 0
          */
+        for (int i = 10; i >= 0; i++){
+            System.out.println("Current count:" + i);
+        }
 
 
     }
@@ -139,13 +146,19 @@ public class Basics {
          *                You may also assume that to_split always has 7 words
          *                separated by spaces, so no loops are required, though
          *                you may use them if you wish.
+         *
          */
+        String[] splitty = to_split.split(" ");
+
         StringBuilder ret = new StringBuilder();
-
-        // Fill in the rest of the body here
-
+        for (String n : splitty)
+            ret.append(n.charAt(0));
         return ret.toString();
     }
+
+
+
+
 
     /**
      * 7. Below is a method that takes in an integer array (similar to a list
@@ -161,7 +174,7 @@ public class Basics {
      * @param arr    An array of integers
      * @return       The sum of all integers at odd indices in arr
      */
-    public static int oddSum(int[] arr) {
+    public static  int oddSum(int[] arr) {
         int current_sum = 0;
 
         /* TODO (Task 5): Complete this method body using a for-loop.
@@ -170,6 +183,11 @@ public class Basics {
          *                You can index into arrays as we do in Python
          *                (e.g. arr[i] gives you the item at index i).
          */
+        int lgth = arr.length;
+        if (lgth > 1) {
+            for (int i = 1; i < lgth; i += 2)
+                current_sum += arr[i];
+        }
 
         return current_sum;
     }
