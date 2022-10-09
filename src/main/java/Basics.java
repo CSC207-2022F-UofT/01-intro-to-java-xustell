@@ -102,7 +102,7 @@ public class Basics {
          */
         for (int i = 0; i <= 10; i++){
             int a = 10 - i;
-            System.out.println("Current count:" + a);
+            System.out.println("Current count:" + a );
         }
 
 
